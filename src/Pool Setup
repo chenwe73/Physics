@@ -1,0 +1,44 @@
+	static final int X = 50; // x coordinate of upper left corner of room
+	static final int Y = 150; // y coordinate of upper left corner of room
+	static final int LENGTH = 900; // length of room
+	static final int HEIGHT = 450; // height of room
+		
+		
+		ball[0] = new Atom(X + 150, Y + HEIGHT / 2, 10, 1, 0.95, 0, 0);
+		final double dist = Math.sqrt(3) * radius + 1; // distance between Atoms
+		ball[1] = new Atom(X + LENGTH - 200, Y + HEIGHT / 2, radius, mass, cor, 0, 0);
+		ball[2] = new Atom(ball[1].xCoord + dist, ball[1].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[3] = new Atom(ball[1].xCoord + dist, ball[1].yCoord + (radius + 1), radius, mass, cor, 0, 0);
+		ball[4] = new Atom(ball[2].xCoord + dist, ball[2].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[5] = new Atom(ball[3].xCoord + dist, ball[3].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[6] = new Atom(ball[3].xCoord + dist, ball[3].yCoord + (radius + 1), radius, mass, cor, 0, 0);
+		ball[7] = new Atom(ball[4].xCoord + dist, ball[4].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[8] = new Atom(ball[5].xCoord + dist, ball[5].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[9] = new Atom(ball[6].xCoord + dist, ball[6].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[10] = new Atom(ball[6].xCoord + dist, ball[6].yCoord + (radius + 1), radius, mass, cor, 0, 0);
+		ball[11] = new Atom(ball[7].xCoord + dist, ball[7].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[12] = new Atom(ball[8].xCoord + dist, ball[8].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[13] = new Atom(ball[9].xCoord + dist, ball[9].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[14] = new Atom(ball[10].xCoord + dist, ball[10].yCoord - (radius + 1), radius, mass, cor, 0, 0);
+		ball[15] = new Atom(ball[10].xCoord + dist, ball[10].yCoord + (radius + 1), radius, mass, cor, 0, 0);
+		
+		wall[0] = new Plane(X + LENGTH / 2, Y + HEIGHT / 2, LENGTH / 2, LENGTH / 2, Math.PI * 3 / 2, HEIGHT / 2, corP);
+		wall[1] = new Plane(X + LENGTH / 2, Y + HEIGHT / 2, LENGTH / 2, LENGTH / 2, Math.PI / 2, HEIGHT / 2, corP);
+		wall[2] = new Plane(X + LENGTH / 2, Y + HEIGHT / 2, HEIGHT / 2, HEIGHT / 2, Math.PI, LENGTH / 2, corP);
+		wall[3] = new Plane(X + LENGTH / 2, Y + HEIGHT / 2, HEIGHT / 2, HEIGHT / 2, 0, LENGTH / 2, corP);
+		wall[4] = new Plane(WINDOWL - 16, -1, -1, -1, corP);
+		wall[5] = new Plane(-1, -1, -1, WINDOWH - 36, corP);
+		wall[6] = new Plane(WINDOWL - 16, WINDOWH - 36, WINDOWL - 16, -1, corP);
+		wall[7] = new Plane(-1, WINDOWH - 36, WINDOWL - 16, WINDOWH - 36, corP);
+		int boxL = 100;
+		int boxH = 100;
+		int boxX = X + LENGTH / 2 - boxL / 2;
+		int boxY = Y + HEIGHT - boxH;
+		wall[8] = new Plane(boxX, boxY, boxX + boxL, boxY, corP);
+		wall[9] = new Plane(boxX + boxL, boxY, boxX + boxL, boxY + boxH, corP);
+		wall[10] = new Plane(boxX + boxL, boxY + boxH, boxX, boxY + boxH, corP);
+		wall[11] = new Plane(boxX, boxY + boxH, boxX, boxY, corP);
+		wall[14] = new Plane(X + 100, Y, X + 100, Y + HEIGHT, corP);
+		wall[13] = new Plane(X + 100, Y + HEIGHT, X + 100, Y, corP);
+		wall[12] = new Plane(X - 1, Y + HEIGHT - 200, X + 200, Y + HEIGHT + 1, corP);
+		
